@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract TunAndMitNFT is ERC721URIStorage, ERC721Burnable, Ownable
+contract NFT is ERC721URIStorage, ERC721Burnable, Ownable
 {
     using SafeMath for uint256;
 
@@ -27,7 +27,7 @@ contract TunAndMitNFT is ERC721URIStorage, ERC721Burnable, Ownable
         _;
     }
 
-
+    
     function buyNFT(address _ref) external whenNotLockMinted {       
         require(msg.sender != _ref, "sender and ref must be different");
         require(!lockUserMint, "LOCK_MINT");
